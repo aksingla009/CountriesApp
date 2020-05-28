@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="launcherActivityCLickHandler"
+            type="com.retrofit.countriesapp.view.LauncherActivity.LauncherActivityClickHandler" />
+    </data>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".view.LauncherActivity"
+        android:orientation="vertical">
+
+
+        <Button
+            android:id="@+id/getAllCountriesBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="Get All Countries"
+            android:onClick="@{launcherActivityCLickHandler::OnGetAllCountriesButtonClicked}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/getCountryNameByISOCodeBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="Get Country Name by ISO Code"
+            android:onClick="@{launcherActivityCLickHandler::OnGetCountryNameByISOCodeButtonClicked}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/getAllCountriesBtn" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
